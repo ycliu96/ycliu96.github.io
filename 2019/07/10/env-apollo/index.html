@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="叶小蜗">
 <meta property="og:description" content="由于实验室的铲运机模型拟采用百度的Apollo平台，所以一直在鼓捣Apollo。本篇文章记录了如何在ubunu部署Apollo并进行调试（以canbus模块为例）。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-02T06:48:00.709Z">
+<meta property="og:updated_time" content="2019-12-02T06:58:18.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下部署Apollo并调试-以canbus模块为例">
 <meta name="twitter:description" content="由于实验室的铲运机模型拟采用百度的Apollo平台，所以一直在鼓捣Apollo。本篇文章记录了如何在ubunu部署Apollo并进行调试（以canbus模块为例）。">
@@ -217,7 +217,7 @@
 <blockquote>
 <p>在执行dev_start.sh时，若一直无法拉取镜像，可尝试在其后添加参数<code>-C</code></p>
 </blockquote>
-<h2 id="5、运行Apollo-demo演示"><a href="#5、运行Apollo-demo演示" class="headerlink" title="5、运行Apollo demo演示"></a>5、运行Apollo demo演示</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash scripts/bootstrap<span class="selector-class">.sh</span> </span><br><span class="line">python docs/demo_guide/rosbag_helper<span class="selector-class">.py</span> demo_3.<span class="number">5</span><span class="selector-class">.bag</span> </span><br><span class="line">cyber_recorder play -f docs/demo_guide/demo_3.<span class="number">5</span><span class="selector-class">.record</span> --loop</span><br></pre></td></tr></table></figure>
+<h2 id="5、运行Apollo-demo演示"><a href="#5、运行Apollo-demo演示" class="headerlink" title="5、运行Apollo demo演示"></a>5、运行Apollo demo演示</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash scripts/bootstrap.sh </span><br><span class="line">python docs/demo_guide/rosbag_helper.py demo_3.5.bag </span><br><span class="line">cyber_recorder play -f docs/demo_guide/demo_3.5.record --loop</span><br></pre></td></tr></table></figure>
 
 <p>打开浏览器,地址栏输入网址localhost：8888即可看到小车。</p>
 <h1 id="调试canbus模块"><a href="#调试canbus模块" class="headerlink" title="调试canbus模块"></a>调试canbus模块</h1><p>canbus模块需要硬件支持，及can卡。本实验室用额是Apollo官方推荐的四通道esdcan。</p>
@@ -583,23 +583,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">env</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,7 +607,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
               </li>
             
             <div class="clearfix"></div>

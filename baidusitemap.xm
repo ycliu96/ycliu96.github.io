@@ -10,10 +10,10 @@
     <loc>https://ycliu96.github.io/2019/07/06/env-RL/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
-    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
+    <loc>https://ycliu96.github.io/2019/09/03/bug/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
-    <loc>https://ycliu96.github.io/2019/09/03/bug/</loc>
+    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>
 </urlset>
