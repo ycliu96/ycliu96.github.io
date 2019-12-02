@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="叶小蜗">
 <meta property="og:description" content="由于实验室的铲运机模型拟采用百度的Apollo平台，所以一直在鼓捣Apollo。本篇文章记录了如何在ubunu部署Apollo并进行调试（以canbus模块为例）。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-02T06:23:37.197Z">
+<meta property="og:updated_time" content="2019-12-02T06:48:00.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下部署Apollo并调试-以canbus模块为例">
 <meta name="twitter:description" content="由于实验室的铲运机模型拟采用百度的Apollo平台，所以一直在鼓捣Apollo。本篇文章记录了如何在ubunu部署Apollo并进行调试（以canbus模块为例）。">
@@ -183,7 +183,7 @@
       
         <p>由于实验室的铲运机模型拟采用百度的Apollo平台，所以一直在鼓捣Apollo。本篇文章记录了如何在ubunu部署Apollo并进行调试（以canbus模块为例）。</p>
 <a id="more"></a>
-<h1 id="部署Apollo"><a href="#部署Apollo" class="headerlink" title="部署Apollo"></a>部署Apollo</h1><h2 id="1、安装GIT"><a href="#1、安装GIT" class="headerlink" title="1、安装GIT"></a>1、安装GIT</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-gey <span class="keyword">install</span> git</span><br></pre></td></tr></table></figure>
+<h1 id="部署Apollo"><a href="#部署Apollo" class="headerlink" title="部署Apollo"></a>部署Apollo</h1><h2 id="1、安装GIT"><a href="#1、安装GIT" class="headerlink" title="1、安装GIT"></a>1、安装GIT</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install git</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、克隆源码"><a href="#2、克隆源码" class="headerlink" title="2、克隆源码"></a>2、克隆源码</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/ApolloAuto/apollo</span><br></pre></td></tr></table></figure>
 
@@ -215,23 +215,35 @@
 <h2 id="4、编译Apollo（CPU）"><a href="#4、编译Apollo（CPU）" class="headerlink" title="4、编译Apollo（CPU）"></a>4、编译Apollo（CPU）</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd apollo</span><br><span class="line">bash docker/scripts/dev_start.sh</span><br><span class="line">bash docker/scripts/dev_into.sh</span><br><span class="line">bash apollo<span class="selector-class">.sh</span> build</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>在执行dev_start.sh时，若一直无法拉取镜像，可尝试在其后添加参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 5、运行Apollo demo演示</span><br></pre></td></tr></table></figure></p>
+<p>在执行dev_start.sh时，若一直无法拉取镜像，可尝试在其后添加参数<code>-C</code></p>
 </blockquote>
-<p>bash scripts/bootstrap.sh<br>python docs/demo_guide/rosbag_helper.py demo_3.5.bag<br>cyber_recorder play -f docs/demo_guide/demo_3.5.record –loop</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">打开浏览器,地址栏输入网址localhost：8888即可看到小车。</span><br><span class="line"></span><br><span class="line"><span class="section"># 调试canbus模块</span></span><br><span class="line">canbus模块需要硬件支持，及can卡。本实验室用额是Apollo官方推荐的四通道esdcan。</span><br><span class="line"><span class="section">## 1、在IPC安装can卡驱动</span></span><br><span class="line"><span class="quote">&gt; 以下的安装方法整理自[esdcan官网](http://www.esdshanghai.com/article3-402_linux_driver_install.html)</span></span><br><span class="line"><span class="section">### 安装前的准备</span></span><br><span class="line">  在[<span class="string">下载中心</span>](<span class="link">http://www.esdshanghai.com/esd_download.html</span>)下载Linux驱动软件包。在写此快速入门时，最新的驱动软件版本为4.0.1。如果是64位的操作系统，请下载[<span class="string">esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</span>](<span class="link">http://www.esdshanghai.com/content/esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</span>)，如果是32位的操作系统，请下载[<span class="string">esdcan-pcie402-linux-x86-4.0.1-0.71d.tgz</span>](<span class="link">http://www.esdshanghai.com/content/esdcan-pcie402-linux-x86-4.0.1-0.71d.tgz</span>)</span><br><span class="line"><span class="section">### 解压</span></span><br><span class="line">进入下载目录解压驱动。我下载到了/Downloads,下载的是esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</span><br><span class="line"></span><br><span class="line">新开一个终端</span><br></pre></td></tr></table></figure>
+<h2 id="5、运行Apollo-demo演示"><a href="#5、运行Apollo-demo演示" class="headerlink" title="5、运行Apollo demo演示"></a>5、运行Apollo demo演示</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash scripts/bootstrap<span class="selector-class">.sh</span> </span><br><span class="line">python docs/demo_guide/rosbag_helper<span class="selector-class">.py</span> demo_3.<span class="number">5</span><span class="selector-class">.bag</span> </span><br><span class="line">cyber_recorder play -f docs/demo_guide/demo_3.<span class="number">5</span><span class="selector-class">.record</span> --loop</span><br></pre></td></tr></table></figure>
 
-<p>cd Downloads<br>tar -xv -f esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 使用dkms方式build和install驱动软件</span><br><span class="line">+ 安装dkms。</span><br></pre></td></tr></table></figure>
+<p>打开浏览器,地址栏输入网址localhost：8888即可看到小车。</p>
+<h1 id="调试canbus模块"><a href="#调试canbus模块" class="headerlink" title="调试canbus模块"></a>调试canbus模块</h1><p>canbus模块需要硬件支持，及can卡。本实验室用额是Apollo官方推荐的四通道esdcan。</p>
+<h2 id="1、在IPC安装can卡驱动"><a href="#1、在IPC安装can卡驱动" class="headerlink" title="1、在IPC安装can卡驱动"></a>1、在IPC安装can卡驱动</h2><blockquote>
+<p>以下的安装方法整理自<a href="http://www.esdshanghai.com/article3-402_linux_driver_install.html" target="_blank" rel="noopener">esdcan官网</a></p>
+</blockquote>
+<h3 id="安装前的准备"><a href="#安装前的准备" class="headerlink" title="安装前的准备"></a>安装前的准备</h3><p>  在<a href="http://www.esdshanghai.com/esd_download.html" target="_blank" rel="noopener">下载中心</a>下载Linux驱动软件包。在写此快速入门时，最新的驱动软件版本为4.0.1。如果是64位的操作系统，请下载<a href="http://www.esdshanghai.com/content/esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz" target="_blank" rel="noopener">esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</a>，如果是32位的操作系统，请下载<a href="http://www.esdshanghai.com/content/esdcan-pcie402-linux-x86-4.0.1-0.71d.tgz" target="_blank" rel="noopener">esdcan-pcie402-linux-x86-4.0.1-0.71d.tgz</a></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>进入下载目录解压驱动。我下载到了/Downloads,下载的是esdcan-pcie402-linux-x86_64-4.0.1-0.71d.tgz</p>
+<p>新开一个终端</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cd</span> <span class="selector-tag">Downloads</span></span><br><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xv</span> <span class="selector-tag">-f</span> <span class="selector-tag">esdcan-pcie402-linux-x86_64-4</span><span class="selector-class">.0</span><span class="selector-class">.1-0</span><span class="selector-class">.71d</span><span class="selector-class">.tgz</span></span><br></pre></td></tr></table></figure>
 
-<p>sudo apt-get install dkms</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+ </span>添加驱动目录内的src目录到dkms中，需使用root权限。</span><br></pre></td></tr></table></figure>
+<h3 id="使用dkms方式build和install驱动软件"><a href="#使用dkms方式build和install驱动软件" class="headerlink" title="使用dkms方式build和install驱动软件"></a>使用dkms方式build和install驱动软件</h3><ul>
+<li><p>安装dkms。 </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install dkms</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加驱动目录内的src目录到dkms中，需使用root权限。</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/esdcan-pcie402-linux-x86_64-4.0.1</span> </span><br><span class="line">sudo -s</span><br><span class="line">dkms add <span class="string">./src</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>build驱动软件</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dkms build esdcan-pcie402-linux-x86_64/<span class="number">4.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>install驱动软件</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dkms install esdcan-pcie402-linux-x86_64/<span class="number">4.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
 
-<p>cd ~/esdcan-pcie402-linux-x86_64-4.0.1<br>sudo -s<br>dkms add ./src</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+ </span>build驱动软件</span><br></pre></td></tr></table></figure>
-
-<p>dkms build esdcan-pcie402-linux-x86_64/4.0.1</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ install驱动软件</span><br><span class="line">```dkms install esdcan-pcie402-linux-x86_64/<span class="number">4.0</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
+</li>
+</ul>
 <h3 id="使用udev方式自动生成设备节点"><a href="#使用udev方式自动生成设备节点" class="headerlink" title="使用udev方式自动生成设备节点"></a>使用udev方式自动生成设备节点</h3><ul>
 <li><p>拷贝驱动目录内的esdcan-pcie402-dev.rules文件到udev的rules.d目录下，此rules文件在每次系统启动时被加载。其中指定的由驱动自动生成的脚本文件/proc/bus/can/%k/inodes会被执行，用来生成设备节点。</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp udev<span class="regexp">/esdcan-pcie402-dev.rules /</span>etc<span class="regexp">/udev/</span>rules.d<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
@@ -571,15 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,6 +608,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canbus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
