@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
     <loc>https://ycliu96.github.io/2019/07/10/env-apollo/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
@@ -11,9 +14,6 @@
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
     <loc>https://ycliu96.github.io/2019/09/03/bug/</loc>
-    <lastmod>2019-12-02</lastmod>
-  </url>  <url>
-    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>
 </urlset>
