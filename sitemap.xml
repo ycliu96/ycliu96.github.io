@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ycliu96.github.io/2019/07/10/env-apollo/</loc>
+    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
     
-    <lastmod>2019-12-05T09:20:59.249Z</lastmod>
+    <lastmod>2019-12-05T11:39:46.302Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ycliu96.github.io/2019/09/03/bug/</loc>
+    
+    <lastmod>2019-12-05T11:39:45.617Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://ycliu96.github.io/2019/12/05/git/</loc>
     
-    <lastmod>2019-12-05T09:04:09.275Z</lastmod>
+    <lastmod>2019-12-05T11:39:44.532Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ycliu96.github.io/2019/09/01/diary/</loc>
+    <loc>https://ycliu96.github.io/2019/12/05/alternatives/</loc>
     
-    <lastmod>2019-12-05T03:03:23.114Z</lastmod>
+    <lastmod>2019-12-05T11:26:56.369Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ycliu96.github.io/2019/07/10/env-apollo/</loc>
+    
+    <lastmod>2019-12-05T09:20:59.249Z</lastmod>
     
   </url>
   
@@ -33,13 +47,6 @@
     <loc>https://ycliu96.github.io/2019/07/06/env-RL/</loc>
     
     <lastmod>2019-12-02T06:23:37.197Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ycliu96.github.io/2019/09/03/bug/</loc>
-    
-    <lastmod>2019-12-02T06:23:37.196Z</lastmod>
     
   </url>
   
