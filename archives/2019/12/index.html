@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://ycliu96.github.io">
-  <title>ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn） | 叶小蜗</title>
+  <title>Archives: 2019/12 | 叶小蜗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录了搭建强化学习环境的全过程">
-<meta name="keywords" content="ubuntu,env,RL,tensorflow">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）">
-<meta property="og:url" content="https://ycliu96.github.io/2019/07/06/env-RL/index.html">
+  <meta name="description" content="中南大学硕士研究生，自然宝藏搬运工">
+<meta name="keywords" content="“Ubuntu，无人驾驶，深度增强学习，百度Apollo”">
+<meta property="og:type" content="website">
+<meta property="og:title" content="叶小蜗">
+<meta property="og:url" content="https://ycliu96.github.io/archives/2019/12/index.html">
 <meta property="og:site_name" content="叶小蜗">
-<meta property="og:description" content="记录了搭建强化学习环境的全过程">
+<meta property="og:description" content="中南大学硕士研究生，自然宝藏搬运工">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-02T06:23:37.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）">
-<meta name="twitter:description" content="记录了搭建强化学习环境的全过程">
+<meta name="twitter:title" content="叶小蜗">
+<meta name="twitter:description" content="中南大学硕士研究生，自然宝藏搬运工">
   
     <link rel="alternative" href="/atom.xml" title="叶小蜗" type="application/atom+xml">
   
@@ -153,350 +152,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-env-RL" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2019/12/05/git/" class="archive-article-date">
+  	<time datetime="2019-12-05T08:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/05/git/">git的基本使用</a>
     </h1>
   
 
-        
-        
-	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
-<a href="/2019/07/06/env-RL/" class="archive-article-date">
-  	<time datetime="2019-07-06T14:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-        <!-- 为首页不显示访问量，添加代码-->
-        <!-- 
-          <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-         -->
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前段时间在图书馆借了本《Python强化学习实战》过来学习，首先便跟着搭建书中所需要的环境。可书上用的<code>Universe</code>死活装不上，折腾了一下午才在Universe的github项目文档发现它已经被弃用了！所以啊，不能盲目跟从书或者资料，一定养成要看文档的习惯!<br>最后跟着官方文档的指引，用<code>gym-tetro</code>替代了<code>Universe</code>。</p>
-<a id="more"></a>
-<h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//repo.continuum.io/archive/Anaconda3-<span class="number">5.0</span>.<span class="number">1</span>-Linux-x86_64.<span class="keyword">sh</span></span><br><span class="line">bash Anaconda3-<span class="number">5.0</span>.<span class="number">1</span>-Linux-x86_64.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装OpenAI-Gym和gym-retro"><a href="#安装OpenAI-Gym和gym-retro" class="headerlink" title="安装OpenAI Gym和gym-retro"></a>安装OpenAI Gym和gym-retro</h2><h3 id="1、创建并激活环境RL（名字自定）"><a href="#1、创建并激活环境RL（名字自定）" class="headerlink" title="1、创建并激活环境RL（名字自定）"></a>1、创建并激活环境RL（名字自定）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="keyword">create</span> <span class="comment">--name RL python=3.5 anaconda</span></span><br><span class="line"><span class="keyword">source</span> <span class="keyword">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、安装依赖"><a href="#2、安装依赖" class="headerlink" title="2、安装依赖"></a>2、安装依赖</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install golang libcupti-<span class="built_in">dev</span> libjpeg-turbo8-<span class="built_in">dev</span> make tmux htop chromium-browser git cmake zlib1g-<span class="built_in">dev</span> xvfb libav-tools xorg-<span class="built_in">dev</span> python-opengl libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libsdl2-<span class="built_in">dev</span> swig</span><br><span class="line">conda install pip six libgcc swig</span><br><span class="line">conda install opencv</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、-可选-安装mujoco"><a href="#3、-可选-安装mujoco" class="headerlink" title="3、(可选)安装mujoco"></a>3、(可选)安装mujoco</h3><p>MuJoCo（Multi-Joint dynamics with Contact）是一个物理模拟器，可以用于机器人控制优化等研究。</p>
-<p>安装过程中发现我的gym和mujoco-py所支持的mujoco版本不一致。为了正常安装，我同时安装了两个版本。</p>
-<p>首先在官网上下载 mjpro150 linux 和 mujoco200_linux，同时点击Licence下载许可证，需要full name email address computer id 等信息，其中根据使用平台下载 getid_linux（可执行文件） 获取 computer id, 步骤如下：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x getid_linux</span><br><span class="line"><span class="string">./getid_linux</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="安装mujoco150"><a href="#安装mujoco150" class="headerlink" title="安装mujoco150"></a>安装mujoco150</h4><ul>
-<li><p>环境配置:创建隐藏文件夹并将 mjpro150_linux 拷贝到 .mujoco 文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/<span class="selector-class">.mujoco</span>    </span><br><span class="line">cp mjpro150_linux<span class="selector-class">.zip</span> ~/.mujoco</span><br><span class="line">cd ~/.mujoco</span><br><span class="line">unzip mjpro150_linux.zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将证书mjkey.txt拷贝到创建的隐藏文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/<span class="selector-class">.mujoco</span>  </span><br><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/.mujoco/mjpro150/bin</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接下来添加环境变量,打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=~/.mujoco/mjpro150/bin$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br><span class="line">export MUJOCO_KEY_PATH=~/.mujoco$&#123;MUJOCO_KEY_PATH&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试结果</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/.mujoco/mjpro150/bin</span></span><br><span class="line"><span class="string">./simulate</span> <span class="string">../model/humanoid.xml</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="安装mujoco2000"><a href="#安装mujoco2000" class="headerlink" title="安装mujoco2000"></a>安装mujoco2000</h4><ul>
-<li><p>环境配置：创建隐藏文件夹并将 mjpro200_linux 拷贝到 .mujoco 文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/<span class="selector-class">.mujoco</span>    </span><br><span class="line">cp mujoco200_linux<span class="selector-class">.zip</span> ~/.mujoco</span><br><span class="line">cd ~/.mujoco</span><br><span class="line">unzip mujoco200_linux.zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将证书mjkey.txt拷贝到创建的隐藏文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/<span class="selector-class">.mujoco</span>  </span><br><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/.mujoco/mujoco200/bin</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接下来添加环境变量,打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=~/.mujoco/mujoco200/bin$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br><span class="line">export MUJOCO_KEY_PATH=~/.mujoco$&#123;MUJOCO_KEY_PATH&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试结果<br>cd ~/.mujoco/mujoco200/bin<br>./simulate ../model/humanoid.xml</p>
-</li>
-</ul>
-<h3 id="4、安装gym"><a href="#4、安装gym" class="headerlink" title="4、安装gym"></a>4、安装gym</h3><p>最简单的方式是直接用pip安装</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install gym==<span class="number">0.9</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
-
-<p>或者以软件包形式安装最新版本</p>
-<ul>
-<li>为避免报错<code>[ERROR: Failed building wheel for mujoco-py]</code>，先单独安装mujoco-py（若不需要mujoco可以不装,跳过这步）<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/openai/mujoco-<span class="keyword">py</span>.git</span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install libgl1-mesa-dev libgl1-mesa-glx libosmesa6-dev <span class="keyword">python3</span>-pip <span class="keyword">python3</span>-numpy <span class="keyword">python3</span>-scipy</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">sudo <span class="keyword">python3</span> setup.<span class="keyword">py</span> install</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<blockquote>
-<p>如果如果需要，可以再单独安装mujoco，放在后面了</p>
-<ul>
-<li>克隆gym源码</li>
-</ul>
-</blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~</span><br><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/openai/gym.git</span><br><span class="line"><span class="keyword">cd</span> gym</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>（若安装了mujoco-py则跳过这步）注释掉setup.py中的mugico、robotics那两行。</li>
-<li>最后安装<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install -y python-numpy python-<span class="built_in">dev</span> cmake zlib1g-<span class="built_in">dev</span> libjpeg-<span class="built_in">dev</span> xvfb libav-tools xorg-<span class="built_in">dev</span> python-opengl libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libsdl2-<span class="built_in">dev</span> swig Pillow  libglfw3-<span class="built_in">dev</span></span><br><span class="line">pip install -e '.[<span class="built_in">all</span>]'</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="5、安装gym-retro"><a href="#5、安装gym-retro" class="headerlink" title="5、安装gym-retro"></a>5、安装gym-retro</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 <span class="keyword">install</span> gym-retro</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装tensorflow-gpu-cuda-cudnn"><a href="#安装tensorflow-gpu-cuda-cudnn" class="headerlink" title="安装tensorflow-gpu+cuda+cudnn"></a>安装tensorflow-gpu+cuda+cudnn</h2><h3 id="安装英伟达驱动"><a href="#安装英伟达驱动" class="headerlink" title="安装英伟达驱动"></a>安装英伟达驱动</h3><p>可通过设置里update的驱动管理安装或者命令行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br><span class="line">sudo ubuntu-drivers autoinstall1</span><br></pre></td></tr></table></figure>
-
-<h3 id="激活环境RL"><a href="#激活环境RL" class="headerlink" title="激活环境RL"></a>激活环境RL</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source <span class="built_in">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装cuda（这里以9-0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）"><a href="#安装cuda（这里以9-0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）" class="headerlink" title="安装cuda（这里以9.0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）"></a>安装cuda（这里以9.0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）</h3><ul>
-<li><p>在<a href="https://developer.nvidia.com/cuda-90-download-archive" target="_blank" rel="noopener">英伟达官网</a>下载cuda9.0(按自己电脑的情况下载合适版本)，下载的安装文件名为：cuda_9.0.176_384.81_linux.run。</p>
-</li>
-<li><p>由于Cuda-9只支持gcc-6以下的版本，而Ubuntu18.04系统默认安装的gcc-7版，所以需要gcc降级。<br> 可以通过如下命令查看当前安装的版本：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll <span class="regexp">/usr/</span>bin<span class="regexp">/gcc*</span></span><br></pre></td></tr></table></figure>
-
-<p> 使用update-alternatives设置gcc和g++：</p>
-<blockquote>
-<p>update-alternatives是ubuntu系统中专门维护系统命令链接符的工具，通过它可以很方便的设置系统默认使用哪个命令、哪个软件版本。其中40 ，50 ，70是优先级数值可以自己设定，–slave能保证gcc和g++保持相同的版本。</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">4.8</span> <span class="number">40</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">4.8</span></span><br><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">5</span> <span class="number">50</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">5</span></span><br><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">7</span> <span class="number">70</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">7</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>使用如下命令选择gcc的版本：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">update</span>-alternatives <span class="comment">--config gcc</span></span><br></pre></td></tr></table></figure>
-
-<p>删除某个gcc版本的选项的话，可以使用</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives <span class="params">--remove</span> gcc <span class="string">/usr/bin/gcc-4.5</span></span><br></pre></td></tr></table></figure>
-
-<p>再使用apt-remove删除即可</p>
-<ul>
-<li>按照命令提示安装：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">sh</span> <span class="selector-tag">cuda_9</span><span class="selector-class">.0</span><span class="selector-class">.176_384</span><span class="selector-class">.81_linux</span><span class="selector-class">.run</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>除了安装英伟达显卡驱动一项选<code>no</code>，其余都选<code>yes</code>。</p>
-<ul>
-<li><p>安装完成后设置环境变量打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># added by cuda_9.0 installer  </span><br><span class="line">export PATH=&quot;/usr/local/cuda-9.0/bin:$PATH&quot;  </span><br><span class="line">export LD_LIBRARY_PATH=&quot;/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>samples<span class="regexp">/1_Utilities/</span>deviceQuery</span><br><span class="line">sudo make</span><br><span class="line">sudo ./deviceQuery</span><br><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="下载安装cuDNN"><a href="#下载安装cuDNN" class="headerlink" title="下载安装cuDNN"></a>下载安装cuDNN</h3><ul>
-<li>下载与cuda对应的cuDNN压缩文件，本机下载的是：cudnn-9.0-linux-x64-v7.5.0.56.tgz，其中9.0是指支持cuda9.0 。</li>
-<li>进入下载的文件目录后，解压并安装：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf cudnn-<span class="number">9.0</span>-linux-x64-v7.<span class="number">5.0</span>.<span class="number">56</span>.tgz</span><br><span class="line">sudo cp cuda<span class="regexp">/include/</span>cudnn.h <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude </span><br><span class="line">sudo cp cuda<span class="regexp">/lib64/</span>libcudnn* <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude<span class="regexp">/cudnn.h /u</span>sr<span class="regexp">/local/</span>cuda<span class="regexp">/lib64/</span>libcudnn*</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h3><p>激活环境RL</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Source <span class="built_in">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>使用“<code>anaconda search -t conda tensorflow</code>”命令来查询conda有哪些TensorFlow的安装包,如安装tensorflow-gpu1.8</p>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">pip</span> <span class="comment">install</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">ignore</span><span class="literal">-</span><span class="comment">installed</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">upgrade</span> <span class="comment">tensorflow</span><span class="literal">-</span><span class="comment">gpu==1</span><span class="string">.</span><span class="comment">8</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>或者</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="params">--ignore-installed</span> <span class="params">--upgrade</span> https:<span class="string">//download.tensorflow.google.cn/linux/gpu/tensorflow_gpu-1.8.0-cp36-cp36m-linux_x86_64.whl</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpeg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wxpay.jpeg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-            <!--添加文章访问量-->
-            <!-- <span id="busuanzi_container_page_pv">
-              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-           </span> -->
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">env</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ycliu96.github.io/2019/07/06/env-RL/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/07/10/env-apollo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ubuntu下部署Apollo并调试-以canbus模块为例
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/07/04/欢迎来到我的小窝/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">欢迎来到我的小窝</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -545,8 +255,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

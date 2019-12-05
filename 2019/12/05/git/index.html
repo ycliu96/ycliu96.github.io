@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://ycliu96.github.io">
-  <title>ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn） | 叶小蜗</title>
+  <title>git的基本使用 | 叶小蜗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录了搭建强化学习环境的全过程">
-<meta name="keywords" content="ubuntu,env,RL,tensorflow">
+  <meta name="description" content="本篇记录了一些git的基本操作，以备不时之需。想更详细、系统的学习可以参考廖雪峰的网站">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）">
-<meta property="og:url" content="https://ycliu96.github.io/2019/07/06/env-RL/index.html">
+<meta property="og:title" content="git的基本使用">
+<meta property="og:url" content="https://ycliu96.github.io/2019/12/05/git/index.html">
 <meta property="og:site_name" content="叶小蜗">
-<meta property="og:description" content="记录了搭建强化学习环境的全过程">
+<meta property="og:description" content="本篇记录了一些git的基本操作，以备不时之需。想更详细、系统的学习可以参考廖雪峰的网站">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-02T06:23:37.197Z">
+<meta property="og:updated_time" content="2019-12-05T09:04:09.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）">
-<meta name="twitter:description" content="记录了搭建强化学习环境的全过程">
+<meta name="twitter:title" content="git的基本使用">
+<meta name="twitter:description" content="本篇记录了一些git的基本操作，以备不时之需。想更详细、系统的学习可以参考廖雪峰的网站">
   
     <link rel="alternative" href="/atom.xml" title="叶小蜗" type="application/atom+xml">
   
@@ -153,14 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-env-RL" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu18.04下配置强化学习环境（anaconda+gym+mujoco+tesoflow-gpu+cuda+cudnn）
+      git的基本使用
     </h1>
   
 
@@ -171,8 +171,8 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2019/07/06/env-RL/" class="archive-article-date">
-  	<time datetime="2019-07-06T14:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+<a href="/2019/12/05/git/" class="archive-article-date">
+  	<time datetime="2019-12-05T08:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
 </a>
         
         <!-- 为首页不显示访问量，添加代码-->
@@ -185,141 +185,95 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前段时间在图书馆借了本《Python强化学习实战》过来学习，首先便跟着搭建书中所需要的环境。可书上用的<code>Universe</code>死活装不上，折腾了一下午才在Universe的github项目文档发现它已经被弃用了！所以啊，不能盲目跟从书或者资料，一定养成要看文档的习惯!<br>最后跟着官方文档的指引，用<code>gym-tetro</code>替代了<code>Universe</code>。</p>
+        <p>本篇记录了一些git的基本操作，以备不时之需。想更详细、系统的学习可以参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰的网站</a></p>
 <a id="more"></a>
-<h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//repo.continuum.io/archive/Anaconda3-<span class="number">5.0</span>.<span class="number">1</span>-Linux-x86_64.<span class="keyword">sh</span></span><br><span class="line">bash Anaconda3-<span class="number">5.0</span>.<span class="number">1</span>-Linux-x86_64.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装OpenAI-Gym和gym-retro"><a href="#安装OpenAI-Gym和gym-retro" class="headerlink" title="安装OpenAI Gym和gym-retro"></a>安装OpenAI Gym和gym-retro</h2><h3 id="1、创建并激活环境RL（名字自定）"><a href="#1、创建并激活环境RL（名字自定）" class="headerlink" title="1、创建并激活环境RL（名字自定）"></a>1、创建并激活环境RL（名字自定）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="keyword">create</span> <span class="comment">--name RL python=3.5 anaconda</span></span><br><span class="line"><span class="keyword">source</span> <span class="keyword">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、安装依赖"><a href="#2、安装依赖" class="headerlink" title="2、安装依赖"></a>2、安装依赖</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install golang libcupti-<span class="built_in">dev</span> libjpeg-turbo8-<span class="built_in">dev</span> make tmux htop chromium-browser git cmake zlib1g-<span class="built_in">dev</span> xvfb libav-tools xorg-<span class="built_in">dev</span> python-opengl libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libsdl2-<span class="built_in">dev</span> swig</span><br><span class="line">conda install pip six libgcc swig</span><br><span class="line">conda install opencv</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、-可选-安装mujoco"><a href="#3、-可选-安装mujoco" class="headerlink" title="3、(可选)安装mujoco"></a>3、(可选)安装mujoco</h3><p>MuJoCo（Multi-Joint dynamics with Contact）是一个物理模拟器，可以用于机器人控制优化等研究。</p>
-<p>安装过程中发现我的gym和mujoco-py所支持的mujoco版本不一致。为了正常安装，我同时安装了两个版本。</p>
-<p>首先在官网上下载 mjpro150 linux 和 mujoco200_linux，同时点击Licence下载许可证，需要full name email address computer id 等信息，其中根据使用平台下载 getid_linux（可执行文件） 获取 computer id, 步骤如下：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x getid_linux</span><br><span class="line"><span class="string">./getid_linux</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="安装mujoco150"><a href="#安装mujoco150" class="headerlink" title="安装mujoco150"></a>安装mujoco150</h4><ul>
-<li><p>环境配置:创建隐藏文件夹并将 mjpro150_linux 拷贝到 .mujoco 文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/<span class="selector-class">.mujoco</span>    </span><br><span class="line">cp mjpro150_linux<span class="selector-class">.zip</span> ~/.mujoco</span><br><span class="line">cd ~/.mujoco</span><br><span class="line">unzip mjpro150_linux.zip</span><br></pre></td></tr></table></figure>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
+<li><p>初始化一个Git仓库，使用git init命令。<br>添加文件到Git仓库，分两步：</p>
+<ol>
+<li>使用命令git add <file>，注意，可反复多次使用，添加多个文件；</file></li>
+<li>使用命令git commit -m <message>，完成。</message></li>
+</ol>
 </li>
-<li><p>将证书mjkey.txt拷贝到创建的隐藏文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/<span class="selector-class">.mujoco</span>  </span><br><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/.mujoco/mjpro150/bin</span><br></pre></td></tr></table></figure>
+<li><p>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；<br>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；<br>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；</p>
 </li>
-<li><p>接下来添加环境变量,打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
+<li><p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。</p>
 </li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=~/.mujoco/mjpro150/bin$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br><span class="line">export MUJOCO_KEY_PATH=~/.mujoco$&#123;MUJOCO_KEY_PATH&#125;</span><br></pre></td></tr></table></figure>
+<li><p>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
 </li>
-<li><p>测试结果</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/.mujoco/mjpro150/bin</span></span><br><span class="line"><span class="string">./simulate</span> <span class="string">../model/humanoid.xml</span></span><br></pre></td></tr></table></figure>
-
+<li><p>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
 </li>
 </ul>
-<h4 id="安装mujoco2000"><a href="#安装mujoco2000" class="headerlink" title="安装mujoco2000"></a>安装mujoco2000</h4><ul>
-<li><p>环境配置：创建隐藏文件夹并将 mjpro200_linux 拷贝到 .mujoco 文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/<span class="selector-class">.mujoco</span>    </span><br><span class="line">cp mujoco200_linux<span class="selector-class">.zip</span> ~/.mujoco</span><br><span class="line">cd ~/.mujoco</span><br><span class="line">unzip mujoco200_linux.zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将证书mjkey.txt拷贝到创建的隐藏文件夹中</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/<span class="selector-class">.mujoco</span>  </span><br><span class="line">cp mjkey<span class="selector-class">.txt</span> ~/.mujoco/mujoco200/bin</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接下来添加环境变量,打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=~/.mujoco/mujoco200/bin$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br><span class="line">export MUJOCO_KEY_PATH=~/.mujoco$&#123;MUJOCO_KEY_PATH&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试结果<br>cd ~/.mujoco/mujoco200/bin<br>./simulate ../model/humanoid.xml</p>
-</li>
-</ul>
-<h3 id="4、安装gym"><a href="#4、安装gym" class="headerlink" title="4、安装gym"></a>4、安装gym</h3><p>最简单的方式是直接用pip安装</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install gym==<span class="number">0.9</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
-
-<p>或者以软件包形式安装最新版本</p>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>Git鼓励大量使用分支：</p>
 <ul>
-<li>为避免报错<code>[ERROR: Failed building wheel for mujoco-py]</code>，先单独安装mujoco-py（若不需要mujoco可以不装,跳过这步）<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/openai/mujoco-<span class="keyword">py</span>.git</span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install libgl1-mesa-dev libgl1-mesa-glx libosmesa6-dev <span class="keyword">python3</span>-pip <span class="keyword">python3</span>-numpy <span class="keyword">python3</span>-scipy</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">sudo <span class="keyword">python3</span> setup.<span class="keyword">py</span> install</span><br></pre></td></tr></table></figure>
-
+<li>查看分支：<code>git branch</code></li>
+<li>创建分支：<code>git branch &lt;name&gt;</code></li>
+<li>切换分支：<code>git checkout &lt;name&gt;</code></li>
+<li>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></li>
+<li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li>
+<li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
+<li>合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并</li>
+</ul>
+<ul>
+<li><p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场。</p>
+</li>
+<li><p>开发一个新feature，最好新建一个分支；<br>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除。</p>
+<h2 id="远程库操作"><a href="#远程库操作" class="headerlink" title="远程库操作"></a>远程库操作</h2></li>
+<li><p>查看远程库信息，使用<code>git remote -v</code>；</p>
+</li>
+<li><p>从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交(本地新建的分支如果不推送到远程，对其他人就是不可见的)；</p>
+</li>
+<li><p>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致；</p>
+</li>
+<li><p>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；</p>
+</li>
+<li><p>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。</p>
+<h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2></li>
+<li><p>命令<code>git tag &lt;tagname&gt;</code>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</p>
+</li>
+<li><p>命令<code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code>可以指定标签信息；</p>
+</li>
+<li><p>命令<code>git tag</code>可以查看所有标签。</p>
+</li>
+<li><p>命令<code>git push origin &lt;tagname&gt;</code>可以推送一个本地标签；</p>
+</li>
+<li><p>命令<code>git push origin --tags</code>可以推送全部未推送过的本地标签；</p>
+</li>
+<li><p>命令<code>git tag -d &lt;tagname&gt;</code>可以删除一个本地标签；</p>
+</li>
+<li><p>命令<code>git push origin :refs/tags/&lt;tagname&gt;</code>可以删除一个远程标签。</p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>忽略某些文件时，需要编写.gitignore；</p>
+</li>
+<li><p>.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！<br>如果你确实想添加该文件，可以用<code>-f</code>强制添加到Git：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -f App.class</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者你发现，可能是.gitignore写得有问题，需要找出来到底哪个规则写错了，可以用<code>git check-ignore</code>命令检查。</p>
 </li>
 </ul>
+<h2 id="设置命令简写"><a href="#设置命令简写" class="headerlink" title="设置命令简写"></a>设置命令简写</h2><p>有没有经常敲错命令？比如git status？status这个单词真心不好记。<br>如果敲git st就表示git status那就简单多了，当然这种偷懒的办法我们是极力赞成的。</p>
+<p>我们只需要敲一行命令，告诉Git，以后st就表示status：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br></pre></td></tr></table></figure>
+
+<p>当然还有别的命令可以简写，很多人都用co表示checkout，ci表示commit，br表示branch：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.ci commit</span><br><span class="line">git config --global alias.br branch</span><br></pre></td></tr></table></figure>
+
+<p>以后提交就可以简写成：<br><code>git ci -m &quot;bala bala bala...</code></p>
+<p><code>--global</code>参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。</p>
+<p>在撤销修改一节中，我们知道，命令<code>git reset HEAD file</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区。既然是一个unstage操作，就可以配置一个unstage别名：<code>git config --global alias.unstage &#39;reset HEAD&#39;</code></p>
+<p>当你敲入命令：<code>git unstage test.py</code><br>实际上Git执行的是：<code>git reset HEAD test.py</code></p>
+<p>配置一个<code>git last</code>，让其显示最后一次提交信息：<br><code>git config --global alias.last &#39;log -1&#39;</code><br>这样，用<code>git last</code>就能显示最近一次的提交：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git last</span><br><span class="line">commit adca45d317e6d8a4b23f9811c3d7b7f0f180bfe2</span><br><span class="line">Merge: bd6ae48 291bea8</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Thu Aug 22 22:49:22 2013 +0800</span><br><span class="line"></span><br><span class="line">    merge &amp; fix hello.py</span><br></pre></td></tr></table></figure>
+
+<p>甚至还有人丧心病狂地把<code>lg</code>配置成了：<br><code>git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>配置Git的时候，加上<code>--global</code>是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。<br>配置文件放哪了？每个仓库的Git配置文件都放在.git/config文件中：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cat .git/config </span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = <span class="number">0</span></span><br><span class="line">    filemode = <span class="keyword">true</span></span><br><span class="line">    bare = <span class="keyword">false</span></span><br><span class="line">    logallrefupdates = <span class="keyword">true</span></span><br><span class="line">    ignorecase = <span class="keyword">true</span></span><br><span class="line">    precomposeunicode = <span class="keyword">true</span></span><br><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = git<span class="variable">@github</span>.<span class="symbol">com:</span>michaelliao/learngit.git</span><br><span class="line">    fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line">[branch <span class="string">"master"</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/master</span><br><span class="line">[<span class="keyword">alias</span>]</span><br><span class="line">    last = log -<span class="number">1</span></span><br><span class="line">别名就在[<span class="keyword">alias</span>]后面，要删除别名，直接把对应的行删掉即可。</span><br><span class="line">而当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中：</span><br><span class="line">cat .gitconfig</span><br><span class="line">[<span class="keyword">alias</span>]</span><br><span class="line">    co = checkout</span><br><span class="line">    ci = commit</span><br><span class="line">    br = branch</span><br><span class="line">    st = status</span><br><span class="line">[user]</span><br><span class="line">    name = Your Name</span><br><span class="line">    email = your<span class="variable">@email</span>.com</span><br></pre></td></tr></table></figure>
+
+<p>配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。</p>
 <blockquote>
-<p>如果如果需要，可以再单独安装mujoco，放在后面了</p>
-<ul>
-<li>克隆gym源码</li>
-</ul>
+<p>注意:含有.git/的内部文件夹会被屏蔽，无法被当前工作区的git追踪，例如：</p>
 </blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~</span><br><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/openai/gym.git</span><br><span class="line"><span class="keyword">cd</span> gym</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">workspace/</span><br><span class="line">    .git/</span><br><span class="line">        ...</span><br><span class="line">    mode/</span><br><span class="line">        ...</span><br><span class="line">    exp/</span><br><span class="line">        .git/</span><br><span class="line">            ...</span><br><span class="line">        ...</span><br><span class="line">    a.py</span><br><span class="line">    b.py</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>（若安装了mujoco-py则跳过这步）注释掉setup.py中的mugico、robotics那两行。</li>
-<li>最后安装<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install -y python-numpy python-<span class="built_in">dev</span> cmake zlib1g-<span class="built_in">dev</span> libjpeg-<span class="built_in">dev</span> xvfb libav-tools xorg-<span class="built_in">dev</span> python-opengl libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libsdl2-<span class="built_in">dev</span> swig Pillow  libglfw3-<span class="built_in">dev</span></span><br><span class="line">pip install -e '.[<span class="built_in">all</span>]'</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="5、安装gym-retro"><a href="#5、安装gym-retro" class="headerlink" title="5、安装gym-retro"></a>5、安装gym-retro</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 <span class="keyword">install</span> gym-retro</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装tensorflow-gpu-cuda-cudnn"><a href="#安装tensorflow-gpu-cuda-cudnn" class="headerlink" title="安装tensorflow-gpu+cuda+cudnn"></a>安装tensorflow-gpu+cuda+cudnn</h2><h3 id="安装英伟达驱动"><a href="#安装英伟达驱动" class="headerlink" title="安装英伟达驱动"></a>安装英伟达驱动</h3><p>可通过设置里update的驱动管理安装或者命令行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br><span class="line">sudo ubuntu-drivers autoinstall1</span><br></pre></td></tr></table></figure>
-
-<h3 id="激活环境RL"><a href="#激活环境RL" class="headerlink" title="激活环境RL"></a>激活环境RL</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source <span class="built_in">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装cuda（这里以9-0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）"><a href="#安装cuda（这里以9-0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）" class="headerlink" title="安装cuda（这里以9.0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）"></a>安装cuda（这里以9.0为例，需根据官网推荐安装与自己显卡驱动版本对应的版本）</h3><ul>
-<li><p>在<a href="https://developer.nvidia.com/cuda-90-download-archive" target="_blank" rel="noopener">英伟达官网</a>下载cuda9.0(按自己电脑的情况下载合适版本)，下载的安装文件名为：cuda_9.0.176_384.81_linux.run。</p>
-</li>
-<li><p>由于Cuda-9只支持gcc-6以下的版本，而Ubuntu18.04系统默认安装的gcc-7版，所以需要gcc降级。<br> 可以通过如下命令查看当前安装的版本：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll <span class="regexp">/usr/</span>bin<span class="regexp">/gcc*</span></span><br></pre></td></tr></table></figure>
-
-<p> 使用update-alternatives设置gcc和g++：</p>
-<blockquote>
-<p>update-alternatives是ubuntu系统中专门维护系统命令链接符的工具，通过它可以很方便的设置系统默认使用哪个命令、哪个软件版本。其中40 ，50 ，70是优先级数值可以自己设定，–slave能保证gcc和g++保持相同的版本。</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">4.8</span> <span class="number">40</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">4.8</span></span><br><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">5</span> <span class="number">50</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">5</span></span><br><span class="line">sudo update-alternatives --install <span class="regexp">/usr/</span>bin<span class="regexp">/gcc gcc /u</span>sr<span class="regexp">/bin/g</span>cc-<span class="number">7</span> <span class="number">70</span> --slave <span class="regexp">/usr/</span>bin<span class="regexp">/g++ g++ /u</span>sr<span class="regexp">/bin/g</span>++-<span class="number">7</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>使用如下命令选择gcc的版本：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">update</span>-alternatives <span class="comment">--config gcc</span></span><br></pre></td></tr></table></figure>
-
-<p>删除某个gcc版本的选项的话，可以使用</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives <span class="params">--remove</span> gcc <span class="string">/usr/bin/gcc-4.5</span></span><br></pre></td></tr></table></figure>
-
-<p>再使用apt-remove删除即可</p>
-<ul>
-<li>按照命令提示安装：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">sh</span> <span class="selector-tag">cuda_9</span><span class="selector-class">.0</span><span class="selector-class">.176_384</span><span class="selector-class">.81_linux</span><span class="selector-class">.run</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>除了安装英伟达显卡驱动一项选<code>no</code>，其余都选<code>yes</code>。</p>
-<ul>
-<li><p>安装完成后设置环境变量打开~/.bashrc</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>末尾添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># added by cuda_9.0 installer  </span><br><span class="line">export PATH=&quot;/usr/local/cuda-9.0/bin:$PATH&quot;  </span><br><span class="line">export LD_LIBRARY_PATH=&quot;/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>samples<span class="regexp">/1_Utilities/</span>deviceQuery</span><br><span class="line">sudo make</span><br><span class="line">sudo ./deviceQuery</span><br><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="下载安装cuDNN"><a href="#下载安装cuDNN" class="headerlink" title="下载安装cuDNN"></a>下载安装cuDNN</h3><ul>
-<li>下载与cuda对应的cuDNN压缩文件，本机下载的是：cudnn-9.0-linux-x64-v7.5.0.56.tgz，其中9.0是指支持cuda9.0 。</li>
-<li>进入下载的文件目录后，解压并安装：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf cudnn-<span class="number">9.0</span>-linux-x64-v7.<span class="number">5.0</span>.<span class="number">56</span>.tgz</span><br><span class="line">sudo cp cuda<span class="regexp">/include/</span>cudnn.h <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude </span><br><span class="line">sudo cp cuda<span class="regexp">/lib64/</span>libcudnn* <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude<span class="regexp">/cudnn.h /u</span>sr<span class="regexp">/local/</span>cuda<span class="regexp">/lib64/</span>libcudnn*</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h3><p>激活环境RL</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Source <span class="built_in">activate</span> RL</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>使用“<code>anaconda search -t conda tensorflow</code>”命令来查询conda有哪些TensorFlow的安装包,如安装tensorflow-gpu1.8</p>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">pip</span> <span class="comment">install</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">ignore</span><span class="literal">-</span><span class="comment">installed</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">upgrade</span> <span class="comment">tensorflow</span><span class="literal">-</span><span class="comment">gpu==1</span><span class="string">.</span><span class="comment">8</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>或者</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="params">--ignore-installed</span> <span class="params">--upgrade</span> https:<span class="string">//download.tensorflow.google.cn/linux/gpu/tensorflow_gpu-1.8.0-cp36-cp36m-linux_x86_64.whl</span></span><br></pre></td></tr></table></figure></li>
-</ul>
+<p>以上目录中，文件夹<code>exp/</code>不会被当前git追踪   </p>
 
       
 
@@ -368,19 +322,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">env</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -436,7 +378,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ycliu96.github.io/2019/07/06/env-RL/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ycliu96.github.io/2019/12/05/git/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -450,18 +392,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/10/env-apollo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ubuntu下部署Apollo并调试-以canbus模块为例
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/04/欢迎来到我的小窝/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">欢迎来到我的小窝</div>
+    <a href="/2019/09/03/bug/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BUG+SOLUTION集锦</div>
       <i class="icon-circle-right"></i>
     </a>
   
